@@ -1,0 +1,2 @@
+config BOARD_MSI_MS7721
+	bool "MS7721"
