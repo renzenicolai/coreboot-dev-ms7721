@@ -1,7 +1,7 @@
-Board URL: http://todo
-Category: workinprogress
+Category: desktop
+Board URL: 
 ROM package: SOIC8
 ROM protocol: SPI
 ROM socketed: n
 Flashrom support: y
-Release year: 20xx
+Release year: 20XX

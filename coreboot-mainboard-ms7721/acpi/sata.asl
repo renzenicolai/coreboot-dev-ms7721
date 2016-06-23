@@ -1,9 +1,7 @@
 /*
- * Super I/O devices
- *
  * This file is part of the coreboot project.
  *
- * Copyright (C) 2014 Edward O'Callaghan <eocallaghan@alterapraxis.com>
+ * Copyright (C) 2013 Sage Electronic Engineering, LLC
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -15,4 +13,4 @@
  * GNU General Public License for more details.
  */
 
-#include <drivers/pc80/pc/ps2_controller.asl>
+/* No SATA functionality */

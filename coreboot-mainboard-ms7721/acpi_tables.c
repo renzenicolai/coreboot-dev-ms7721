@@ -1,7 +1,7 @@
 /*
  * This file is part of the coreboot project.
  *
- * Copyright (C) 2011 Advanced Micro Devices, Inc.
+ * Copyright (C) 2012 Advanced Micro Devices, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -29,22 +29,21 @@ unsigned long acpi_fill_madt(unsigned long current)
 	/* create all subtables for processors */
 	current = acpi_create_madt_lapics(current);
 
-	/* Write SB800 IOAPIC, only one */
-	/*current += acpi_create_madt_ioapic((acpi_madt_ioapic_t *) current,
-			CONFIG_MAX_CPUS, IO_APIC_ADDR, 0);*/
+	/* Write Hudson IOAPIC, only one */
+	current += acpi_create_madt_ioapic((acpi_madt_ioapic_t *) current, CONFIG_MAX_CPUS,
+					   IO_APIC_ADDR, 0);
 
-	/*current += acpi_create_madt_irqoverride((acpi_madt_irqoverride_t *)
-			current, 0, 0, 2, 0);
 	current += acpi_create_madt_irqoverride((acpi_madt_irqoverride_t *)
-			current, 0, 9, 9, 0xF);*/
-
+						current, 0, 0, 2, 0);
+	current += acpi_create_madt_irqoverride((acpi_madt_irqoverride_t *)
+						current, 0, 9, 9, 0xF);
 	/* 0: mean bus 0--->ISA */
 	/* 0: PIC 0 */
 	/* 2: APIC 2 */
 	/* 5 mean: 0101 --> Edge-triggered, Active high */
 
 	/* create all subtables for processors */
-	/* current = acpi_create_madt_lapic_nmis(current, 5, 1); */
+	current += acpi_create_madt_lapic_nmi((acpi_madt_lapic_nmi_t *)current, 0xff, 5, 1);
 	/* 1: LINT1 connect to NMI */
 
 	return current;

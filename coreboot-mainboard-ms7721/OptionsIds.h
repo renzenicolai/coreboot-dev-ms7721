@@ -1,7 +1,7 @@
 /*
  * This file is part of the coreboot project.
  *
- * Copyright (C) 2011 Advanced Micro Devices, Inc.
+ * Copyright (C) 2012 Advanced Micro Devices, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -42,12 +42,12 @@
  *
  **/
 
-#define IDSOPT_IDS_ENABLED     TRUE
+//#define IDSOPT_IDS_ENABLED     TRUE
 //#define IDSOPT_CONTROL_ENABLED TRUE
-//#define IDSOPT_TRACING_ENABLED TRUE
+#define IDSOPT_TRACING_ENABLED TRUE
+#define IDSOPT_TRACING_CONSOLE_SERIALPORT TRUE
 //#define IDSOPT_PERF_ANALYSIS   TRUE
 #define IDSOPT_ASSERT_ENABLED  TRUE
-//#define CONFIG_REDIRECT_IDS_HDT_CONSOLE_TO_SERIAL TRUE
 //#undef IDSOPT_DEBUG_ENABLED
 //#define IDSOPT_DEBUG_ENABLED  FALSE
 //#undef IDSOPT_HOST_SIMNOW

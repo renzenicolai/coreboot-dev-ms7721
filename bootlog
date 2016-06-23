@@ -1,0 +1,520 @@
+\0x00
+
+coreboot-4.4-588ccaa9a7d94da4f5a5b3579eb9e3d06c9f4a51 Wed Jun 22 23:12:30 UTC 2016 romstage starting...
+BSP Family_Model: 00610f31
+cpu_init_detectedx = 00000000
+Fch OEM config in INIT RESET Done
+
+
+coreboot-4.4-588ccaa9a7d94da4f5a5b3579eb9e3d06c9f4a51 Wed Jun 22 23:12:30 UTC 2016 romstage starting...
+BSP Family_Model: 00610f31
+cpu_init_detectedx = 00000000
+Fch OEM config in INIT RESET Done
+\0x00\0x00
+
+coreboot-4.4-588ccaa9a7d94da4f5a5b3579eb9e3d06c9f4a51 Wed Jun 22 23:12:30 UTC 2016 romstage starting...
+BSP Family_Model: 00610f31
+cpu_init_detectedx = 00000000
+Fch OEM config in INIT RESET Done
+PCI: 00:14.4 bridge ctrl <- 0403
+PCI: 00:14.4 cmd <- 01
+PCI: 00:14.5 subsystem <- 1022/1410
+PCI: 00:14.5 cmd <- 02
+PCI: 00:16.0 cmd <- 02
+PCI: 00:16.2 cmd <- 02
+PCI: 00:18.0 cmd <- 00
+PCI: 00:18.1 subsystem <- 1022/1410
+PCI: 00:18.1 cmd <- 00
+PCI: 00:18.2 subsystem <- 1022/1410
+PCI: 00:18.2 cmd <- 00
+PCI: 00:18.3 subsystem <- 1022/1410
+PCI: 00:18.3 cmd <- 00
+PCI: 00:18.4 subsystem <- 1022/1410
+PCI: 00:18.4 cmd <- 00
+PCI: 00:18.5 subsystem <- 1022/1410
+PCI: 00:18.5 cmd <- 00
+PCI: 01:00.0 cmd <- 03
+done.
+BS: BS_DEV_ENABLE times (us): entry 319 run 31486 exit 0
+Initializing devices...
+Root Device init ...
+Root Device init finished in 955 usecs
+CPU_CLUSTER: 0 init ...
+start_eip=0x00001000, code_size=0x00000031
+Initializing CPU #0
+CPU: vendor AMD device 610f31
+CPU: family 15, model 13, stepping 01
+Model 15 Init.
+
+MTRR check
+Fixed MTRRs   : Enabled
+Variable MTRRs: Enabled
+
+Enabling cache
+Setting up local apic... apic_id: 0x10 done.
+siblings = 03, CPU #0 initialized
+CPU1: stack_base 0014f000, stack_end 0014fff8
+Asserting INIT.
+Waiting for send to finish...
++Deasserting INIT.
+Waiting for send to finish...
++#startup loops: 2.
+Sending STARTUP #1 to 17.
+After apic_write.
+Startup point 1.
+Waiting for send to finish...
++Sending STARTUP #2 to 17.
+After apic_write.
+Startup point 1.
+Waiting for send to finish...
++After Startup.
+Initializing CPU #1
+CPU: vendor AMD device 610f31
+CPU: family 15, model 13, stepping 01
+Model 15 Init.
+
+MTRR check
+Fixed MTRRs   : Enabled
+Variable MTRRs: Enabled
+
+Enabling cache
+Setting up local apic... apic_id: 0x11 done.
+siblings = 03, CPU #1 initialized
+CPU2: stack_base 0014e000, stack_end 0014eff8
+Asserting INIT.
+Waiting for send to finish...
++Deasserting INIT.
+Waiting for send to finish...
++#startup loops: 2.
+Sending STARTUP #1 to 18.
+After apic_write.
+Startup point 1.
+Waiting for send to finish...
++Sending STARTUP #2 to 18.
+After apic_write.
+Startup point 1.
+Waiting for send to finish...
++After Startup.
+Initializing CPU #2
+CPU: vendor AMD device 610f31
+CPU: family 15, model 13, stepping 01
+Model 15 Init.
+
+MTRR check
+Fixed MTRRs   : Enabled
+Variable MTRRs: Enabled
+
+Enabling cache
+Setting up local apic... apic_id: 0x12 done.
+siblings = 03, CPU #2 initialized
+CPU3: stack_base 0014d000, stack_end 0014dff8
+Asserting INIT.
+Waiting for send to finish...
++Deasserting INIT.
+Waiting for send to finish...
++#startup loops: 2.
+Sending STARTUP #1 to 19.
+After apic_write.
+Startup point 1.
+Waiting for send to finish...
++Sending STARTUP #2 to 19.
+After apic_write.
+Startup point 1.
+Waiting for send to finish...
++After Startup.
+Initializing CPU #3
+Waiting for 1 CPUS to stop
+CPU: vendor AMD device 610f31
+CPU: family 15, model 13, stepping 01
+Model 15 Init.
+
+MTRR check
+Fixed MTRRs   : Enabled
+Variable MTRRs: Enabled
+
+Enabling cache
+Setting up local apic... apic_id: 0x13 done.
+siblings = 03, CPU #3 initialized
+All AP CPUs stopped (1083 loops)
+CPU0: stack: 00150000 - 00151000, lowest used address 00150664, stack used: 2460 bytes
+CPU1: stack: 0014f000 - 00150000, lowest used address 0014fe08, stack used: 504 bytes
+CPU2: stack: 0014e000 - 0014f000, lowest used address 0014ee08, stack used: 504 bytes
+CPU3: stack: 0014d000 - 0014e000, lowest used address 0014de08, stack used: 504 bytes
+CPU_CLUSTER: 0 init finished in 151289 usecs
+DOMAIN: 0000 init ...
+DOMAIN: 0000 init finished in 1000 usecs
+PCI: 00:00.0 init ...
+PCI: 00:00.0 init finished in 1000 usecs
+PCI: 00:01.0 init ...
+PCI: 00:01.0 init finished in 1000 usecs
+PCI: 00:01.1 init ...
+PCI: 00:01.1 init finished in 1000 usecs
+PCI: 00:11.0 init ...
+PCI: 00:11.0 init finished in 1008 usecs
+PCI: 00:12.0 init ...
+PCI: 00:12.0 init finished in 1000 usecs
+PCI: 00:12.2 init ...
+PCI: 00:12.2 init finished in 998 usecs
+PCI: 00:13.0 init ...
+PCI: 00:13.0 init finished in 1000 usecs
+PCI: 00:13.2 init ...
+PCI: 00:13.2 init finished in 1000 usecs
+PCI: 00:14.0 init ...
+IOAPIC: Initializing IOAPIC at 0xfec00000
+IOAPIC: Bootstrap Processor Local APIC = 0x10
+IOAPIC: ID = 0x04
+IOAPIC: Dumping registers
+  reg 0x0000: 0x04000000
+  reg 0x0001: 0x00178021
+  reg 0x0002: 0x04000000
+IOAPIC: 24 interrupts
+IOAPIC: Enabling interrupts on FSB
+IOAPIC: reg 0x00000000 value 0x10000000 0x00000700
+IOAPIC: reg 0x00000001 value 0x00000000 0x00010000
+IOAPIC: reg 0x00000002 value 0x00000000 0x00010000
+IOAPIC: reg 0x00000003 value 0x00000000 0x00010000
+IOAPIC: reg 0x00000004 value 0x00000000 0x00010000
+IOAPIC: reg 0x00000005 value 0x00000000 0x00010000
+IOAPIC: reg 0x00000006 value 0x00000000 0x00010000
+IOAPIC: reg 0x00000007 value 0x00000000 0x00010000
+IOAPIC: reg 0x00000008 value 0x00000000 0x00010000
+IOAPIC: reg 0x00000009 value 0x00000000 0x00010000
+IOAPIC: reg 0x0000000a value 0x00000000 0x00010000
+IOAPIC: reg 0x0000000b value 0x00000000 0x00010000
+IOAPIC: reg 0x0000000c value 0x00000000 0x00010000
+IOAPIC: reg 0x0000000d value 0x00000000 0x00010000
+IOAPIC: reg 0x0000000e value 0x00000000 0x00010000
+IOAPIC: reg 0x0000000f value 0x00000000 0x00010000
+IOAPIC: reg 0x00000010 value 0x00000000 0x00010000
+IOAPIC: reg 0x00000011 value 0x00000000 0x00010000
+IOAPIC: reg 0x00000012 value 0x00000000 0x00010000
+IOAPIC: reg 0x00000013 value 0x00000000 0x00010000
+IOAPIC: reg 0x00000014 value 0x00000000 0x00010000
+IOAPIC: reg 0x00000015 value 0x00000000 0x00010000
+IOAPIC: reg 0x00000016 value 0x00000000 0x00010000
+IOAPIC: reg 0x00000017 value 0x00000000 0x00010000
+PCI: 00:14.0 init finished in 67003 usecs
+PCI: 00:14.2 init ...
+PCI: 00:14.2 init finished in 999 usecs
+PCI: 00:14.3 init ...
+RTC Init
+PCI: 00:14.3 init finished in 1457 usecs
+PCI: 00:14.4 init ...
+PCI: 00:14.4 init finished in 1000 usecs
+PCI: 00:14.5 init ...
+PCI: 00:14.5 init finished in 1000 usecs
+PCI: 00:16.0 init ...
+PCI: 00:16.0 init finished in 999 usecs
+PCI: 00:16.2 init ...
+PCI: 00:16.2 init finished in 1000 usecs
+PCI: 00:18.0 init ...
+PCI: 00:18.0 init finished in 1000 usecs
+PCI: 00:18.1 init ...
+PCI: 00:18.1 init finished in 998 usecs
+PCI: 00:18.2 init ...
+PCI: 00:18.2 init finished in 1000 usecs
+PCI: 00:18.3 init ...
+PCI: 00:18.3 init finished in 1000 usecs
+PCI: 00:18.4 init ...
+PCI: 00:18.4 init finished in 1000 usecs
+PCI: 00:18.5 init ...
+PCI: 00:18.5 init finished in 1000 usecs
+PCI: 01:00.0 init ...
+PCI: 01:00.0 init finished in 1013 usecs
+PNP: 004e.1 init ...
+PNP: 004e.1 init finished in 955 usecs
+PNP: 004e.4 init ...
+Fintek F71869AD Super I/O HWM: Initializing Hardware Monitor..
+Fintek F71869AD Super I/O HWM: Base Address at 0x225
+PNP: 004e.4 init finished in 6101 usecs
+PNP: 004e.5 init ...
+PNP: 004e.5 init finished in 955 usecs
+PNP: 004e.7 init ...
+PNP: 004e.7 init finished in 956 usecs
+PNP: 004e.a init ...
+PNP: 004e.a init finished in 956 usecs
+Devices initialized
+Show all devs... After init.
+Root Device: enabled 1
+CPU_CLUSTER: 0: enabled 1
+APIC: 10: enabled 1
+DOMAIN: 0000: enabled 1
+PCI: 00:00.0: enabled 1
+PCI: 00:00.2: enabled 1
+PCI: 00:01.0: enabled 1
+PCI: 00:01.1: enabled 1
+PCI: 00:02.0: enabled 0
+PCI: 00:03.0: enabled 0
+PCI: 00:04.0: enabled 1
+PCI: 00:05.0: enabled 0
+PCI: 00:06.0: enabled 0
+PCI: 00:07.0: enabled 0
+PCI: 00:08.0: enabled 0
+PCI: 00:10.0: enabled 0
+PCI: 00:10.1: enabled 0
+PCI: 00:11.0: enabled 1
+PCI: 00:12.0: enabled 1
+PCI: 00:12.2: enabled 1
+PCI: 00:13.0: enabled 1
+PCI: 00:13.2: enabled 1
+PCI: 00:14.0: enabled 1
+I2C: 01:50: enabled 1
+I2C: 01:51: enabled 1
+PCI: 00:14.1: enabled 0
+PCI: 00:14.2: enabled 1
+PCI: 00:14.3: enabled 1
+PNP: 004e.0: enabled 0
+PNP: 004e.1: enabled 1
+PNP: 004e.2: enabled 0
+PNP: 004e.3: enabled 0
+PNP: 004e.4: enabled 1
+PNP: 004e.5: enabled 1
+PNP: 004e.6: enabled 0
+PNP: 004e.7: enabled 1
+PNP: 004e.8: enabled 0
+PNP: 004e.a: enabled 1
+PCI: 00:14.4: enabled 1
+PCI: 00:14.5: enabled 1
+PCI: 00:14.6: enabled 0
+PCI: 00:14.7: enabled 0
+PCI: 00:15.0: enabled 0
+PCI: 00:15.1: enabled 0
+PCI: 00:15.2: enabled 0
+PCI: 00:15.3: enabled 0
+PCI: 00:18.0: enabled 1
+PCI: 00:18.1: enabled 1
+PCI: 00:18.2: enabled 1
+PCI: 00:18.3: enabled 1
+PCI: 00:18.4: enabled 1
+PCI: 00:18.5: enabled 1
+APIC: 11: enabled 1
+APIC: 12: enabled 1
+APIC: 13: enabled 1
+PCI: 00:16.0: enabled 1
+PCI: 00:16.2: enabled 1
+PCI: 01:00.0: enabled 1
+BS: BS_DEV_INIT times (us): entry 0 run 370899 exit 0
+CBMEM:
+IMD: root @ bffff000 254 entries.
+IMD: root @ bfffec00 62 entries.
+Moving GDT to bfffea00...ok
+Finalize devices...
+Devices finalized
+agesawrapper_amdinitlate() returned AGESA_SUCCESS
+BS: BS_POST_DEVICE times (us): entry 4608 run 1740 exit 2270
+BS: BS_OS_RESUME_CHECK times (us): entry 0 run 0 exit 0
+Writing IRQ routing tables to 0xf0000...write_pirq_routing_table done.
+Writing IRQ routing tables to 0xbffd4000...write_pirq_routing_table done.
+PIRQ table: 48 bytes.
+Wrote the mp table end at: 000f0410 - 000f0604
+Wrote the mp table end at: bffd3010 - bffd3204
+MP table: 516 bytes.
+CBFS: 'Master Header Locator' located CBFS at [100:7fffc0)
+CBFS: Locating 'fallback/dsdt.aml'
+CBFS: Found @ offset 83400 size 188f
+CBFS: 'Master Header Locator' located CBFS at [100:7fffc0)
+CBFS: Locating 'fallback/slic'
+CBFS: 'fallback/slic' not found.
+ACPI: Writing ACPI tables at bffaf000.
+ACPI:    * FACS
+ACPI:    * DSDT
+ACPI:    * FADT
+pm_base: 0x0800
+ACPI: added table 1/32, length now 40
+ACPI:     * SSDT
+ACPI: added table 2/32, length now 44
+ACPI:    * MCFG
+ACPI:    * TCPA
+TCPA log created at bff9f000
+ACPI: added table 3/32, length now 48
+ACPI:    * MADT
+ACPI: added table 4/32, length now 52
+current = bffb0d20
+ACPI:    * HPET
+ACPI: added table 5/32, length now 56
+ACPI: added table 6/32, length now 60
+ACPI:    * IVRS at bffb0f30
+ACPI: added table 7/32, length now 64
+ACPI:    * SRAT at bffb0fa0
+  AGESA SRAT table NULL. Skipping.
+ACPI:   * SLIT at bffb0fa0
+  AGESA SLIT table NULL. Skipping.
+ACPI:  * AGESA ALIB SSDT at bffb0fa0
+ACPI: added table 8/32, length now 68
+ACPI:    * SSDT at bffb14c0
+ACPI: added table 9/32, length now 72
+ACPI:    * SSDT for PState at bffb205c
+ACPI: done.
+ACPI tables: 12384 bytes.
+smbios_write_tables: bff9e000
+Root Device (MSI MS-7721)
+CPU_CLUSTER: 0 (AMD FAM15tn Root Complex)
+APIC: 10 (AMD CPU Family 15h)
+DOMAIN: 0000 (AMD FAM15tn Root Complex)
+PCI: 00:00.0 (AMD FAM15 Northbridge)
+PCI: 00:00.2 (AMD FAM15 Northbridge)
+PCI: 00:01.0 (AMD FAM15 Northbridge)
+PCI: 00:01.1 (AMD FAM15 Northbridge)
+PCI: 00:02.0 (AMD FAM15 Northbridge)
+PCI: 00:03.0 (AMD FAM15 Northbridge)
+PCI: 00:04.0 (AMD FAM15 Northbridge)
+PCI: 00:05.0 (AMD FAM15 Northbridge)
+PCI: 00:06.0 (AMD FAM15 Northbridge)
+PCI: 00:07.0 (AMD FAM15 Northbridge)
+PCI: 00:08.0 (AMD FAM15 Northbridge)
+PCI: 00:10.0 (ATI HUDSON)
+PCI: 00:10.1 (ATI HUDSON)
+PCI: 00:11.0 (ATI HUDSON)
+PCI: 00:12.0 (ATI HUDSON)
+PCI: 00:12.2 (ATI HUDSON)
+PCI: 00:13.0 (ATI HUDSON)
+PCI: 00:13.2 (ATI HUDSON)
+PCI: 00:14.0 (ATI HUDSON)
+I2C: 01:50 (unknown)
+I2C: 01:51 (unknown)
+PCI: 00:14.1 (ATI HUDSON)
+PCI: 00:14.2 (ATI HUDSON)
+PCI: 00:14.3 (ATI HUDSON)
+PNP: 004e.0 (Fintek F71869AD Super I/O)
+PNP: 004e.1 (Fintek F71869AD Super I/O)
+PNP: 004e.2 (Fintek F71869AD Super I/O)
+PNP: 004e.3 (Fintek F71869AD Super I/O)
+PNP: 004e.4 (Fintek F71869AD Super I/O)
+PNP: 004e.5 (Fintek F71869AD Super I/O)
+PNP: 004e.6 (Fintek F71869AD Super I/O)
+PNP: 004e.7 (Fintek F71869AD Super I/O)
+PNP: 004e.8 (Fintek F71869AD Super I/O)
+PNP: 004e.a (Fintek F71869AD Super I/O)
+PCI: 00:14.4 (ATI HUDSON)
+PCI: 00:14.5 (ATI HUDSON)
+PCI: 00:14.6 (ATI HUDSON)
+PCI: 00:14.7 (ATI HUDSON)
+PCI: 00:15.0 (ATI HUDSON)
+PCI: 00:15.1 (ATI HUDSON)
+PCI: 00:15.2 (ATI HUDSON)
+PCI: 00:15.3 (ATI HUDSON)
+PCI: 00:18.0 (AMD FAM15 Northbridge)
+PCI: 00:18.1 (AMD FAM15 Northbridge)
+PCI: 00:18.2 (AMD FAM15 Northbridge)
+PCI: 00:18.3 (AMD FAM15 Northbridge)
+PCI: 00:18.4 (AMD FAM15 Northbridge)
+PCI: 00:18.5 (AMD FAM15 Northbridge)
+APIC: 11 (unknown)
+APIC: 12 (unknown)
+APIC: 13 (unknown)
+PCI: 00:16.0 (unknown)
+PCI: 00:16.2 (unknown)
+PCI: 01:00.0 (unknown)
+SMBIOS tables: 370 bytes.
+Writing table forward entry at 0x00000500
+Wrote coreboot table at: 00000500, 0x10 bytes, checksum efe0
+Writing coreboot table at 0xbffd5000
+ 0. 0000000000000000-0000000000000fff: CONFIGURATION TABLES
+ 1. 0000000000001000-000000000009ffff: RAM
+ 2. 00000000000c0000-00000000bff9dfff: RAM
+ 3. 00000000bff9e000-00000000bfffffff: CONFIGURATION TABLES
+ 4. 00000000c0000000-00000000dfffffff: RESERVED
+ 5. 00000000f8000000-00000000fbffffff: RESERVED
+ 6. 0000000100000000-000000011effffff: RAM
+CBFS: 'Master Header Locator' located CBFS at [100:7fffc0)
+FMAP: Found "FLASH" version 1.1 at 0.
+FMAP: base = ff800000 size = 800000 #areas = 3
+Wrote coreboot table at: bffd5000, 0x26c bytes, checksum cbcb
+coreboot table: 644 bytes.
+IMD ROOT    0. bffff000 00001000
+IMD SMALL   1. bfffe000 00001000
+CONSOLE     2. bffde000 00020000
+AGESA RSVD  3. bffdd000 00001000
+COREBOOT    4. bffd5000 00008000
+IRQ TABLE   5. bffd4000 00001000
+SMP TABLE   6. bffd3000 00001000
+ACPI        7. bffaf000 00024000
+TCPA LOG    8. bff9f000 00010000
+SMBIOS      9. bff9e000 00000800
+IMD small region:
+  IMD ROOT    0. bfffec00 00000400
+  GDT         1. bfffea00 00000200
+BS: BS_WRITE_TABLES times (us): entry 26 run 199268 exit 0
+CBFS: 'Master Header Locator' located CBFS at [100:7fffc0)
+CBFS: Locating 'fallback/payload'
+CBFS: Found @ offset 73b40 size eebe
+Loading segment from rom address 0xff873c78
+  code (compression=1)
+  New segment dstaddr 0xe4080 memsize 0x1bf80 srcaddr 0xff873cb0 filesize 0xee86
+Loading segment from rom address 0xff873c94
+  Entry Point 0x000ff06e
+Bounce Buffer at bfd34000, 2531232 bytes
+Loading Segment: addr: 0x00000000000e4080 memsz: 0x000000000001bf80 filesz: 0x000000000000ee86
+lb: [0x0000000000100000, 0x0000000000234fd0)
+Post relocation: addr: 0x00000000000e4080 memsz: 0x000000000001bf80 filesz: 0x000000000000ee86
+using LZMA
+[ 0x000e4080, 00100000, 0x00100000) <- ff873cb0
+dest 000e4080, end 00100000, bouncebuffer bfd34000
+Loaded segments
+BS: BS_PAYLOAD_LOAD times (us): entry 0 run 44806 exit 0
+Jumping to boot code at 000ff06e(bffd5000)
+CPU0: stack: 00150000 - 00151000, lowest used address 00150664, stack used: 2460 bytes
+entry    = 0x000ff06e
+lb_start = 0x00100000
+lb_size  = 0x00134fd0
+buffer   = 0xbfd34000
+SeaBIOS (version rel-1.9.1-0-gb3ef39f)
+BUILD: gcc: (coreboot toolchain v1.38 April 3rd, 2016) 5.2.0 binutils: (GNU Binutils) 2.25
+SeaBIOS (version rel-1.9.1-0-gb3ef39f)
+BUILD: gcc: (coreboot toolchain v1.38 April 3rd, 2016) 5.2.0 binutils: (GNU Binutils) 2.25
+Found coreboot cbmem console @ bffde000
+Found mainboard MSI MS-7721
+Relocating init from 0x000e54a0 to 0xbff52be0 (size 45952)
+Found CBFS header at 0xff800138
+multiboot: eax=0, ebx=0
+Found 24 PCI devices (max PCI bus is 02)
+Copying SMBIOS entry point from 0xbff9e000 to 0x000f0800
+Copying ACPI RSDP from 0xbffaf000 to 0x000f07d0
+Copying MPTABLE from 0xbffd3000/bffd3010 to 0x000f05c0
+Copying PIR from 0xbffd4000 to 0x000f0590
+Using pmtimer, ioport 0x818
+Scan for VGA option rom
+EHCI init on dev 00:12.2 (regs=0xf01cd020)
+EHCI init on dev 00:13.2 (regs=0xf01ce020)
+Found 0 lpt ports
+Found 1 serial ports
+AHCI controller at 11.0, iobase f01cc000, irq 0
+EHCI init on dev 00:16.2 (regs=0xf01cf020)
+OHCI init on dev 00:12.0 (regs=0xf01c8000)
+OHCI init on dev 00:13.0 (regs=0xf01c9000)
+Searching bootorder for: /pci@i0cf8/*@11/drive@1/disk@0
+OHCI init on dev 00:14.5 (regs=0xf01ca000)
+AHCI/1: registering: "DVD/CD [AHCI/1: TSSTcorp CDDVDW SH-222AB ATAPI-7 DVD/CD]"
+Got ps2 nak (status=51)
+OHCI init on dev 00:16.0 (regs=0xf01cb000)
+USB keyboard initialized
+Searching bootorder for: /pci@i0cf8/*@11/drive@0/disk@0
+AHCI/0: registering: "AHCI/0: ST3500320NS ATA-6 Hard-Disk (465 GiBytes)"
+All threads complete.
+Scan for option roms
+
+Press ESC for boot menu.
+
+Searching bootorder for: HALT
+drive 0x000f04d0: PCHS=16383/16/63 translation=lba LCHS=1024/255/63 s=976773168
+Space available for UMB: c0000-ee800, f0000-f04a0
+Returned 253952 bytes of ZoneHigh
+e820 map has 7 items:
+  0: 0000000000000000 - 000000000009fc00 = 1 RAM
+  1: 000000000009fc00 - 00000000000a0000 = 2 RESERVED
+  2: 00000000000f0000 - 0000000000100000 = 2 RESERVED
+  3: 0000000000100000 - 00000000bff9c000 = 1 RAM
+  4: 00000000bff9c000 - 00000000e0000000 = 2 RESERVED
+  5: 00000000f8000000 - 00000000fc000000 = 2 RESERVED
+  6: 0000000100000000 - 000000011f000000 = 1 RAM
+enter handle_19:
+  NULL
+Booting from DVD/CD...
+Device reports MEDIUM NOT PRESENT
+scsi_is_ready returned -1
+Boot failed: Could not read from CDROM (code 0003)
+enter handle_18:
+  NULL
+Booting from Hard Disk...
+Booting from 0000:7c00
+

@@ -1,7 +1,7 @@
 /*
  * This file is part of the coreboot project.
  *
- * Copyright (C) 2011 Advanced Micro Devices, Inc.
+ * Copyright (C) 2012 Advanced Micro Devices, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -13,19 +13,17 @@
  * GNU General Public License for more details.
  */
 
-
 #include <arch/pirq_routing.h>
 #include <console/console.h>
-#include <cpu/amd/amdfam14.h>
+#include <cpu/amd/amdfam15.h>
 #include <device/pci_def.h>
-#include <string.h>
 #include <stdint.h>
-
+#include <string.h>
 
 static void write_pirq_info(struct irq_info *pirq_info, u8 bus, u8 devfn,
-			u8 link0, u16 bitmap0, u8 link1, u16 bitmap1,
-			u8 link2, u16 bitmap2, u8 link3, u16 bitmap3,
-			u8 slot, u8 rfu)
+			    u8 link0, u16 bitmap0, u8 link1, u16 bitmap1,
+			    u8 link2, u16 bitmap2, u8 link3, u16 bitmap3,
+			    u8 slot, u8 rfu)
 {
 	pirq_info->bus = bus;
 	pirq_info->devfn = devfn;
@@ -41,9 +39,9 @@ static void write_pirq_info(struct irq_info *pirq_info, u8 bus, u8 devfn,
 	pirq_info->rfu = rfu;
 }
 
+
 unsigned long write_pirq_routing_table(unsigned long addr)
 {
-
 	struct irq_routing_table *pirq;
 	struct irq_info *pirq_info;
 	u32 slot_num;
@@ -52,7 +50,7 @@ unsigned long write_pirq_routing_table(unsigned long addr)
 	u8 sum = 0;
 	int i;
 
-	/* Align table on 16 byte boundary. */
+	/* Align the table to be 16 byte aligned. */
 	addr += 15;
 	addr &= ~15;
 
@@ -80,7 +78,7 @@ unsigned long write_pirq_routing_table(unsigned long addr)
 	pirq_info = (void *)(&pirq->checksum + 1);
 	slot_num = 0;
 
-	/* PCI Bridge */
+	/* pci bridge */
 	write_pirq_info(pirq_info, 0, PCI_DEVFN(0x14, 4),
 			0x1, 0xdef8, 0x2, 0xdef8, 0x3, 0xdef8, 0x4, 0xdef8, 0,
 			0);

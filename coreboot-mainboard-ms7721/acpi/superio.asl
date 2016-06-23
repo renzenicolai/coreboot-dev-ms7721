@@ -1,7 +1,7 @@
 /*
  * This file is part of the coreboot project.
  *
- * Copyright (C) 2011 Advanced Micro Devices, Inc.
+ * Copyright (C) 2013 Sage Electronic Engineering, LLC
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -13,18 +13,4 @@
  * GNU General Public License for more details.
  */
 
-/* DefinitionBlock Statement */
-DefinitionBlock (
-	"DSDT.AML",	/* Output filename */
-	"DSDT",		/* Signature */
-	0x02,		/* DSDT Revision, needs to be 2 for 64bit */
-	"MSI",		/* OEMID */
-	"COREBOOT",	/* TABLE ID */
-	0x00010001	/* OEM Revision */
-	)
-{	/* Start of ASL file */
-	/* #include <arch/x86/acpi/debug.asl> */	/* Include global debug methods if needed */
-
-	#include "acpi/superio.asl"
-}
-/* End of ASL file */
+/* No Super I/O device or functionality yet */
