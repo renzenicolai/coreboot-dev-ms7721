@@ -9,6 +9,7 @@
  - PCIE x16
  - Soundcard
  - Network
+ - Onboard graphics (need vgabios!)
 
 = Not working =
  - PCIE x1
@@ -17,3 +18,7 @@
  - PCI slot
  - TPM
  - Parallel port
+
+
+= VGA BIOS =
+For onboard graphics the vgabios needs to be included when compiling coreboot! (Hint: make menuconfig has an option for that)
