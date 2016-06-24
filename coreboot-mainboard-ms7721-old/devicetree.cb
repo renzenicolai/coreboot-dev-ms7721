@@ -2,7 +2,6 @@
 # This file is part of the coreboot project.
 #
 # Copyright (C) 2012 Advanced Micro Devices, Inc.
-# Copyright (C) 2016 Renze Nicolai <renze@rnplus.nl>
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -28,25 +27,25 @@ chip northbridge/amd/agesa/family15tn/root_complex
 			chip northbridge/amd/agesa/family15tn # PCI side of HT root complex
 				device pci 0.0 on  end # Root Complex
 				device pci 0.2 on  end # IOMMU
-				device pci 1.0 on  end # Internal Graphics P2P bridge 0x990e
+				device pci 1.0 on  end # Internal Graphics P2P bridge 0x99XX
 				device pci 1.1 on  end # Internal Multimedia
-				device pci 2.0 on  end # PCIe x16
-				device pci 3.0 off end # -
-				device pci 4.0 on  end # PCIE Realtek LAN
-				device pci 5.0 on  end # PCIE x1 (1)
-				device pci 6.0 on  end # PCIE x1 (2)
+				device pci 2.0 on  end # PCIE SLOT0 x16 blue
+				device pci 3.0 off end # unused?
+				device pci 4.0 on  end # PCIE 4x black
+				device pci 5.0 off end # unused?
+				device pci 6.0 off end # unused?
 				device pci 7.0 off end # LAN
 				device pci 8.0 off end # NB/SB Link P2P bridge
 			end	#chip northbridge/amd/agesa/family15tn # PCI side of HT root complex
 
 			chip southbridge/amd/agesa/hudson # it is under NB/SB Link, but on the same pci bus
-				device pci 10.0 on  end # USB XHCI
-				device pci 10.1 on  end # USB XHCI
+				device pci 10.0 on  end # XHCI HC0
+				device pci 10.1 on  end # XHCI HC1
 				device pci 11.0 on  end # SATA
-				device pci 12.0 on  end # USB OHCI
-				device pci 12.2 on  end # USB EHCI
-				device pci 13.0 on  end # USB OHCI
-				device pci 13.2 on  end # USB EHCI
+				device pci 12.0 on  end # USB
+				device pci 12.2 on  end # USB
+				device pci 13.0 on  end # USB
+				device pci 13.2 on  end # USB
 				device pci 14.0 on      # SMBUS
 					chip drivers/generic/generic #dimm 0
 						device i2c 50 on end # 7-bit SPD address
@@ -56,7 +55,7 @@ chip northbridge/amd/agesa/family15tn/root_complex
 					end
 				end # SM
 				device pci 14.1 off end # IDE	0x439c
-				device pci 14.2 on  end # Azallia (Audio)
+				device pci 14.2 on  end # HDA	0x4383
 				device pci 14.3 on      # LPC	0x439d
 					chip superio/fintek/f71869ad
 								register "multi_function_register_1" = "0x01"
@@ -84,11 +83,12 @@ chip northbridge/amd/agesa/family15tn/root_complex
 									io 0x60 = 0x3f8
 									irq 0x70 = 4
 								end
-								device pnp 4e.02 off		# COM2 (not physically wired on board!)
+# COM2 not physically wired on board.
+								device pnp 4e.02 off		# COM2
 									io 0x60 = 0x2f8
 									irq 0x70 = 3
 								end
-								device pnp 4e.03 on		  # Parallel Port
+								device pnp 4e.03 off		# Parallel Port
 									io 0x60 = 0x378
 									irq 0x70 = 7
 									drq 0x74 = 3
@@ -97,7 +97,7 @@ chip northbridge/amd/agesa/family15tn/root_complex
 									io 0x60 = 0x225 # Fintek datasheet says 0x295.
 									irq 0x70 = 0
 								end
-								device pnp 4e.05 on     # KBC
+								device pnp 4e.05 on # KBC
 									io 0x60 = 0x060
 									irq 0x70 = 1 # Keyboard IRQ
 									irq 0x72 = 12 # Mouse IRQ
@@ -108,12 +108,12 @@ chip northbridge/amd/agesa/family15tn/root_complex
 								device pnp 4e.0a on end	# PME
 							end # f71869ad
 				end	#device pci 14.3 # LPC
-				device pci 14.4 on  end # PCI 0x4384 (PCI slot on board)
-				device pci 14.5 on  end # USB OHCI
+				device pci 14.4 on  end # PCI 0x4384
+				device pci 14.5 on  end # USB 2
 				device pci 14.6 off end # Gec
 				device pci 14.7 off end # SD
-				device pci 15.0 off end # unused
-				device pci 15.1 off end # PCIe 1 onboard gigabit
+				device pci 15.0 on end # PCIe 0 - onboard PCIe 1x
+				device pci 15.1 on end # PCIe 1 onboard gigabit
 				device pci 15.2 off end # unused
 				device pci 15.3 off end # unused
 
