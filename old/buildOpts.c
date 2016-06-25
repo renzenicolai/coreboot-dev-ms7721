@@ -431,10 +431,11 @@ CONST PSO_ENTRY ROMDATA DefaultPlatformMemoryConfiguration[] = {
   //      Speicifes the HW RXEN training seed for a channel of a socket
   //
 
-  NUMBER_OF_DIMMS_SUPPORTED (ANY_SOCKET, ANY_CHANNEL, 2),
+  NUMBER_OF_DIMMS_SUPPORTED (ANY_SOCKET, ANY_CHANNEL, 2), //TODO: Should be 1...
   NUMBER_OF_CHANNELS_SUPPORTED (ANY_SOCKET, 2),
+
 /*
-  TODO: is this OK for DDR3 socket FM2?
+  TODO: is this OK for DDR3 socket FM2? (R: this was here already)
   MEMCLK_DIS_MAP (ANY_SOCKET, ANY_CHANNEL, 0x01, 0x02, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00),
   CKE_TRI_MAP (ANY_SOCKET, ANY_CHANNEL, 0x05, 0x0A),
   ODT_TRI_MAP (ANY_SOCKET, ANY_CHANNEL, 0x01, 0x02, 0x00, 0x00),

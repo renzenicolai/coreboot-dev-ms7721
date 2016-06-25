@@ -7,17 +7,20 @@
  - Serial console
  - SATA (Ports 1 and 2 tested)
  - PCIE x16
+ - PCIE x1
+ - PCI slot
  - Soundcard
  - Network
- - Onboard graphics (need vgabios!)
+ - Onboard graphics [needs vgabios] [HDMI]
 
 = Not working =
- - PCIE x1
+ (nothing)
 
 = Not tested =
- - PCI slot
  - TPM
  - Parallel port
+ - VGA
+ - DVI
 
 
 = VGA BIOS =

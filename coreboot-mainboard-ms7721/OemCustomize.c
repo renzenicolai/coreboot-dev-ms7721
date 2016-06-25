@@ -2,6 +2,7 @@
  * This file is part of the coreboot project.
  *
  * Copyright (C) 2012 Advanced Micro Devices, Inc.
+ * Copyright (C) 2016 Renze Nicolai <renze@rnplus.nl>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,7 +19,8 @@
 #include "amdlib.h"
 
 #include <northbridge/amd/agesa/agesawrapper.h>
-#include <vendorcode/amd/agesa/f15/Proc/CPU/heapManager.h>
+#include <vendorcode/amd/agesa/f15tn/Proc/CPU/heapManager.h>
+#include <PlatformMemoryConfiguration.h>
 
 #define FILECODE PROC_GNB_PCIE_FAMILY_0X15_F15PCIECOMPLEXCONFIG_FILECODE
 
@@ -68,17 +70,29 @@
  */
 
 static const PCIe_PORT_DESCRIPTOR PortList [] = {
-	/* PCIe port, Lanes 8:23, PCI Device Number 2, blue x16 slot */
+	/* PCIe port, Lanes 8:23, PCI Device Number 2, x16 slot */
 	{
 		0,
 		PCIE_ENGINE_DATA_INITIALIZER (PciePortEngine, 8, 23),
 		PCIE_PORT_DATA_INITIALIZER (PortEnabled, ChannelTypeExt6db, 2, HotplugDisabled, PcieGenMaxSupported, PcieGenMaxSupported, AspmDisabled, 1)
 	},
-	/* PCIe port, Lanes 4:7, PCI Device Number 4, black x16 slot (in fact x4) */
+	/* PCIe port, Lane 4, PCI Device Number 4, Realtek LAN */
 	{
 		0,
-		PCIE_ENGINE_DATA_INITIALIZER (PciePortEngine, 4, 7),
+		PCIE_ENGINE_DATA_INITIALIZER (PciePortEngine, 4, 4),
 		PCIE_PORT_DATA_INITIALIZER (PortEnabled, ChannelTypeExt6db, 4, HotplugDisabled, PcieGenMaxSupported, PcieGenMaxSupported, AspmDisabled, 1)
+	},
+	/* PCIe port, Lane 5, PCI Device Number 5, x1 slot (1) */
+	{
+		0,
+		PCIE_ENGINE_DATA_INITIALIZER (PciePortEngine, 5, 5),
+		PCIE_PORT_DATA_INITIALIZER (PortEnabled, ChannelTypeExt6db, 5, HotplugDisabled, PcieGenMaxSupported, PcieGenMaxSupported, AspmDisabled, 1)
+	},
+	/* PCIe port, Lane 6, PCI Device Number 6, x1 slot (2) */
+	{
+		0,
+		PCIE_ENGINE_DATA_INITIALIZER (PciePortEngine, 6, 6),
+		PCIE_PORT_DATA_INITIALIZER (PortEnabled, ChannelTypeExt6db, 6, HotplugDisabled, PcieGenMaxSupported, PcieGenMaxSupported, AspmDisabled, 1)
 	},
 	/* PCIe port, Lanes 0:3, UMI link to SB, PCI Device Number 8 */
 	{
@@ -91,8 +105,8 @@ static const PCIe_PORT_DESCRIPTOR PortList [] = {
 /*
  * It is not known, if the setup is complete.
  *
- * Tested and works: VGA/DVI
- * Untested: HDMI
+ * Tested and works: HDMI
+ * Untested: VGA/DVI
  */
 static const PCIe_DDI_DESCRIPTOR DdiList [] = {
 	// DP0 to HDMI0/DP
@@ -198,6 +212,33 @@ static AGESA_STATUS OemInitMid(AMD_MID_PARAMS * InitMid)
 	InitMid->GnbMidConfiguration.iGpuVgaMode = 0;
 	return AGESA_SUCCESS;
 }
+
+/*----------------------------------------------------------------------------------------
+ *                        CUSTOMER OVERIDES MEMORY TABLE
+ *----------------------------------------------------------------------------------------
+ */
+
+#if IS_ENABLED(CONFIG_BOARD_MSI_MS7721)
+/*
+ *  Platform Specific Overriding Table allows IBV/OEM to pass in platform information to AGESA
+ *  (e.g. MemClk routing, the number of DIMM slots per channel,...). If PlatformSpecificTable
+ *  is populated, AGESA will base its settings on the data from the table. Otherwise, it will
+ *  use its default conservative settings.
+ */
+CONST PSO_ENTRY ROMDATA DefaultPlatformMemoryConfiguration[] = {
+
+  NUMBER_OF_DIMMS_SUPPORTED (ANY_SOCKET, ANY_CHANNEL, 2),
+  NUMBER_OF_CHANNELS_SUPPORTED (ANY_SOCKET, 2),
+/*
+  TODO: is this OK for DDR3 socket FM2?
+  MEMCLK_DIS_MAP (ANY_SOCKET, ANY_CHANNEL, 0x01, 0x02, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00),
+  CKE_TRI_MAP (ANY_SOCKET, ANY_CHANNEL, 0x05, 0x0A),
+  ODT_TRI_MAP (ANY_SOCKET, ANY_CHANNEL, 0x01, 0x02, 0x00, 0x00),
+  CS_TRI_MAP (ANY_SOCKET, ANY_CHANNEL, 0x01, 0x02, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00),
+  */
+  PSO_END
+};
+#endif /* CONFIG_BOARD_MSI_MS7721 */
 
 const struct OEM_HOOK OemCustomize = {
 	.InitEarly = OemInitEarly,

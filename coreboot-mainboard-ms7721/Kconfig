@@ -3,6 +3,8 @@
 #
 # Copyright (C) 2012 Advanced Micro Devices, Inc.
 # Copyright (C) 2012 Rudolf Marek <r.marek@assembler.cz>
+# Copyright (C) 2016 Renze Nicolai <renze@rnplus.nl>
+
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -92,7 +94,7 @@ config ONBOARD_VGA_IS_PRIMARY
 
 config VGA_BIOS_ID
 	string
-	default "1002,9993"
+	default "1002,990e"
 
 config HUDSON_LEGACY_FREE
 	bool

@@ -2,6 +2,7 @@
  * This file is part of the coreboot project.
  *
  * Copyright (C) 2012 Advanced Micro Devices, Inc.
+ * Copyright (C) 2016 Renze Nicolai <renze@rnplus.nl>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -15,7 +16,6 @@
 
 #include "AGESA.h"
 #include <northbridge/amd/agesa/BiosCallOuts.h>
-#include "OptionsIds.h"
 
 #include <cbfs.h>
 #include <vendorcode/amd/agesa/f15tn/Proc/Fch/FchPlatform.h>
@@ -43,7 +43,7 @@ const int BiosCalloutsLen = ARRAY_SIZE(BiosCallouts);
  * Copied from `/sys/class/sound/hwC1D3/init_pin_configs` when running
  * the vendor BIOS.
  */
-const CODEC_ENTRY f2a85_m_alc887_VerbTbl[] = {
+const CODEC_ENTRY ms7721_alc887_VerbTbl[] = {
 {0x11, 0x411111f0},
 {0x12, 0x411111f0},
 {0x14, 0x01014410},
@@ -62,7 +62,7 @@ const CODEC_ENTRY f2a85_m_alc887_VerbTbl[] = {
 
 static const CODEC_TBL_LIST CodecTableList[] =
 {
-	{0x10ec0887, (CODEC_ENTRY*)&f2a85_m_alc887_VerbTbl[0]},
+	{0x10ec0887, (CODEC_ENTRY*)&ms7721_alc887_VerbTbl[0]},
 	{(UINT32)0x0FFFFFFFF, (CODEC_ENTRY*)0x0FFFFFFFFUL}
 };
 

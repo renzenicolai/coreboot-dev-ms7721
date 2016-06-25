@@ -38,27 +38,26 @@ const BIOS_CALLOUT_STRUCT BiosCallouts[] =
 const int BiosCalloutsLen = ARRAY_SIZE(BiosCallouts);
 
 /**
- * ASUS F2A85-M board ALC887-VD Verb Table
+ * MSI MS-7721 board ALC887-VD Verb Table
  *
- * Copied from `/sys/class/sound/hwC1D0/init_pin_configs` when running
+ * Copied from `/sys/class/sound/hwC1D3/init_pin_configs` when running
  * the vendor BIOS.
  */
 const CODEC_ENTRY f2a85_m_alc887_VerbTbl[] = {
-	{0x11, 0x99430140},
-	{0x12, 0x411111f0},
-	{0x14, 0x01014010},
-	{0x15, 0x01011012},
-	{0x16, 0x01016011},
-	{0x17, 0x01012014},
-	{0x18, 0x01a19850},
-	{0x19, 0x02a19c60},
-	{0x1a, 0x0181305f},
-	{0x1b, 0x02214c20},
-	{0x1c, 0x411111f0},
-	{0x1d, 0x4005e601},
-	{0x1e, 0x01456130},
-	{0x1f, 0x411111f0},
-	{0xff, 0xffffffff}
+{0x11, 0x411111f0},
+{0x12, 0x411111f0},
+{0x14, 0x01014410},
+{0x15, 0x01011412},
+{0x16, 0x01016411},
+{0x17, 0x01012414},
+{0x18, 0x01a19c30},
+{0x19, 0x02a19c40},
+{0x1a, 0x0181343f},
+{0x1b, 0x02214c20},
+{0x1c, 0x411111f0},
+{0x1d, 0x4007f603},
+{0x1e, 0x411111f0},
+{0x1f, 0x411111f0}
 };
 
 static const CODEC_TBL_LIST CodecTableList[] =
@@ -98,7 +97,7 @@ static AGESA_STATUS Fch_Oem_config(UINT32 Func, UINTN FchData, VOID *ConfigPtr)
 		FchParams_env->Usb.Xhci0Enable = IS_ENABLED(CONFIG_HUDSON_XHCI_ENABLE);
 		FchParams_env->Usb.Xhci1Enable = IS_ENABLED(CONFIG_HUDSON_XHCI_ENABLE);
 	}
-	printk(BIOS_DEBUG, "Done\n");
+	printk(BIOS_DEBUG, "Done.\n");
 
 	return AGESA_SUCCESS;
 }

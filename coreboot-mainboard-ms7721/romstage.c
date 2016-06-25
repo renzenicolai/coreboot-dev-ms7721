@@ -74,7 +74,7 @@ void cache_as_ram_main(unsigned long bist, unsigned long cpu_init_detectedx)
 
 	amd_initmmio();
 
-	post_code(0x42);
+	post_code(0x29);
 
 	if (!cpu_init_detectedx && boot_cpu()) {
 
@@ -97,6 +97,8 @@ void cache_as_ram_main(unsigned long bist, unsigned long cpu_init_detectedx)
 
 		/* enable SIO clock */
 		sbxxx_enable_48mhzout();
+
+		/* Enable serial console */
 		fintek_enable_serial(SERIAL_DEV, CONFIG_TTYS0_BASE);
 		console_init();
 
@@ -107,7 +109,7 @@ void cache_as_ram_main(unsigned long bist, unsigned long cpu_init_detectedx)
 		outb(byte, 0xcd7);
 
 		/* set DDR3 voltage */
-		byte = CONFIG_BOARD_ASUS_F2A85_M_DDR3_VOLT_VAL;
+		byte = CONFIG_BOARD_MSI_MS7721_DDR3_VOLT_VAL;
 
 		/* default is byte = 0x0, so no need to set it in this case */
 		if (byte)

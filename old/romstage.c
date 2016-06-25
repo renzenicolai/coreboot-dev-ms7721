@@ -113,42 +113,34 @@ void cache_as_ram_main(unsigned long bist, unsigned long cpu_init_detectedx)
 		if (byte)
 			do_smbus_write_byte(0xb20, 0x15, 0x3, byte);
 	}
-
 	/* Halt if there was a built in self test failure */
 	post_code(0x34);
 	report_bist_failure(bist);
 
 	/* Load MPB */
 	val = cpuid_eax(1);
-	printk(BIOS_DEBUG, "BSP Family_Model: %08x\n", val);
-	printk(BIOS_DEBUG, "cpu_init_detectedx = %08lx\n", cpu_init_detectedx);
-
-	printk(BIOS_DEBUG, "TEST!!\n");
-
+	printk(BIOS_DEBUG, "BSP Family_Model: %08x (cpu_init_detectedx: %08lx)\n", val, cpu_init_detectedx);
 	post_code(0x37);
+	printk(BIOS_DEBUG, "agesawrapper_amdinitreset()\n");
 	agesawrapper_amdinitreset();
 	post_code(0x39);
-	printk(BIOS_DEBUG, "R: 0x39\n");
-
+	printk(BIOS_DEBUG, "agesawrapper_amdinitearly()\n");
 	agesawrapper_amdinitearly();
-	printk(BIOS_DEBUG, "Bootmode: ");
+	post_code(0x42);
 	int s3resume = acpi_is_wakeup_s3();
 	if (!s3resume) {
 		printk(BIOS_DEBUG, "Cold boot\n");
 		post_code(0x40);
 		agesawrapper_amdinitpost();
-		printk(BIOS_DEBUG, "R: 0x41\n");
 		post_code(0x41);
 		agesawrapper_amdinitenv();
 		disable_cache_as_ram();
 	} else {		/* S3 detect */
 		printk(BIOS_INFO, "S3 detected\n");
-
 		post_code(0x60);
 		agesawrapper_amdinitresume();
 		amd_initcpuio();
 		agesawrapper_amds3laterestore();
-
 		post_code(0x61);
 		prepare_for_resume();
 	}
@@ -156,6 +148,5 @@ void cache_as_ram_main(unsigned long bist, unsigned long cpu_init_detectedx)
 	post_code(0x50);
 	printk(BIOS_DEBUG, "Copy and run...\n");
 	copy_and_run();
-
 	post_code(0x54);  /* Should never see this post code. */
 }
